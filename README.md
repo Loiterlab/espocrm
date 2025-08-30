@@ -11,7 +11,8 @@ Archivos necesarios
 
 1. CSS personalizado:
 client/custom/css/custom.css
-css/* Centrar y agrandar el logo en la página de login */
+css/
+* Centrar y agrandar el logo en la página de login */
 #login .logo-container {
     text-align: center;
     margin: 0 auto;
@@ -35,7 +36,7 @@ css/* Centrar y agrandar el logo en la página de login */
     }
 }
 
-2. Configuración para cargar el CSS:
+3. Configuración para cargar el CSS:
 custom/Espo/Custom/Resources/metadata/app/client.json
 json{
     "cssList": [
@@ -45,9 +46,10 @@ json{
     "favicon": "client/custom/img/favicon.ico",
     "favicon196": "client/custom/img/favicon-196.png"
 }
-Pasos de implementación
 
-Crear directorio CSS personalizado:
+# Pasos de implementación
+
+# Crear directorio CSS personalizado:
 
 mkdir -p client/custom/css/
 
@@ -57,7 +59,7 @@ nano client/custom/css/custom.css
 
 # Crear directorio de configuración:
 
-bashmkdir -p custom/Espo/Custom/Resources/metadata/app/
+mkdir -p custom/Espo/Custom/Resources/metadata/app/
 
 # Crear archivo de configuración:
 
@@ -65,7 +67,7 @@ nano custom/Espo/Custom/Resources/metadata/app/client.json
 
 # Establecer permisos correctos:
 
-bashchown -R usuario:usuario client/custom/
+chown -R usuario:usuario client/custom/
 chown -R usuario:usuario custom/Espo/
 
 # Limpiar caché:
@@ -76,11 +78,9 @@ Desde SSH: rm -rf data/cache/*
 # Verificación
 Para verificar que la configuración está activa:
 
-# Ver archivos CSS personalizados
 ls -la client/custom/css/
-
-# Ver configuración JSON
 cat custom/Espo/Custom/Resources/metadata/app/client.json
+
 Notas
 
 El logo se centra usando selectores específicos #login .logo-container
