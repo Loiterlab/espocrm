@@ -51,37 +51,32 @@ Crear directorio CSS personalizado:
 
 mkdir -p client/custom/css/
 
-Crear archivo CSS:
+# Crear archivo CSS:
 
 nano client/custom/css/custom.css
 
-# (pegar el contenido CSS de arriba)
-
-Crear directorio de configuración:
+# Crear directorio de configuración:
 
 bashmkdir -p custom/Espo/Custom/Resources/metadata/app/
 
-Crear archivo de configuración:
+# Crear archivo de configuración:
 
 nano custom/Espo/Custom/Resources/metadata/app/client.json
 
-# (pegar el contenido JSON de arriba)
-
-Establecer permisos correctos:
+# Establecer permisos correctos:
 
 bashchown -R usuario:usuario client/custom/
 chown -R usuario:usuario custom/Espo/
 
-Limpiar caché:
+# Limpiar caché:
 
 Desde admin: Administración → Limpiar Caché
 Desde SSH: rm -rf data/cache/*
 
-
-
-Verificación
+# Verificación
 Para verificar que la configuración está activa:
-bash# Ver archivos CSS personalizados
+
+# Ver archivos CSS personalizados
 ls -la client/custom/css/
 
 # Ver configuración JSON
